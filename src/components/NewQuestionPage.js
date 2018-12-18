@@ -10,8 +10,8 @@ class NewQuestionPage extends Component {
         super(props);
         this.state = {
             current: 0,
-            insrt: '',
-            msg: ''
+            msg: '',
+            content:'',
         }
     }
     next() {
@@ -23,15 +23,16 @@ class NewQuestionPage extends Component {
         const current = this.state.current - 1;
         this.setState({ current });
     }
-    handelInsrt = (e) => {
-        this.setState({
-            insrt: e.target.value
-        })
-    }
 
     handelMsg = (e) => {
         this.setState({
             msg: e.target.value
+        })
+    }
+
+    handelContent = (e) => {
+        this.setState({
+            content: e.target.value
         })
     }
 
@@ -42,14 +43,14 @@ class NewQuestionPage extends Component {
             (
                 <div>
                     <h1>简单描述题目</h1>
-                    <TextArea rows={6} />
+                    <TextArea id="msg" rows={6} onChange={this.handelMsg} value={this.state.msg} />
                 </div>
             )
             ,
             (
                 <div>
                     <h1>题目信息</h1>
-                    <TextArea rows={6} />
+                    <TextArea msg="content" rows={6} onChange={this.handelContent} value={this.state.content} />
                 </div>
             )
             ,
@@ -86,7 +87,7 @@ class NewQuestionPage extends Component {
             <div>
                 <Row type="flex" justify="space-around" align="middle" >
                     <Col span={20}>
-                        <Steps current={current} style={{ paddingTop: "15px", paddingBottom: "15px" }} >
+                        <Steps current={current} style={{ paddingTop: "30px", paddingBottom: "30px" }} >
                             <Step title="第一步" description="题目信息" />
                             <Step title="第二步" description="题目具体信息" />
                             <Step title="第三步" description="上传参考答案" />

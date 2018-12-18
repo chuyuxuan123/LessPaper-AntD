@@ -4,6 +4,7 @@ import {
   Layout
 } from 'antd';
 
+import AssistPage from './AssistPage';
 import ResultPage from './ResultPage';
 import NewQuestionPage from './NewQuestionPage';
 import HomePage from './HomePage';
@@ -50,6 +51,7 @@ class App extends Component {
             { this.state.login && <Route path="/home" component={HomePage} /> }
             { this.state.login && <Route path="/newquestion" component={NewQuestionPage} /> }
             { this.state.login && <Route path="/result" component={ResultPage} /> }
+            <Route path="/help" component={AssistPage} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             LessPaper ©2018 Created by Skr狠人.All Rights Reserved

@@ -78,7 +78,8 @@ export default class Navbar extends Component {
                             key="sub1"
                             title={<span><Icon type="user" /><span>您好，请登录！</span></span>}
                         >
-                            <Menu.Item key="6"><Link to="/help"><span><Icon type="question-circle" /></span>帮助</Link></Menu.Item>
+                            <Menu.Item key="!"><Link to="/"><span><Icon type="login" /></span>登录</Link></Menu.Item>
+                            <Menu.Item key="2"><Link to="/help"><span><Icon type="question-circle" /></span>帮助</Link></Menu.Item>
                         </SubMenu>
                     </Menu>
                 )
