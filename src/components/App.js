@@ -33,6 +33,7 @@ class App extends Component {
     this.setState({
       login: false
     })
+    window.location.href = "/" ;
   }
 
   render() {
@@ -51,7 +52,7 @@ class App extends Component {
             { this.state.login && <Route path="/result" component={ResultPage} /> }
           </Content>
           <Footer style={{ textAlign: 'center' }}>
-            LessPaper ©2018 Created by Skr狠人
+            LessPaper ©2018 Created by Skr狠人.All Rights Reserved
           </Footer>
         </Layout>
       </Layout>
