@@ -36,6 +36,11 @@ class NewQuestionPage extends Component {
         })
     }
 
+    handelSubmit = (e) => {
+        message.success('上传成功');
+        // window.location.href = "/home" ;
+    }
+
     //TODO:暂存写入的数据
     tempStore = () => { }
     render() {
@@ -101,7 +106,7 @@ class NewQuestionPage extends Component {
                             }
                             {
                                 current === steps.length - 1
-                                && <Button type="primary" onClick={() => message.success('上传成功')}>完成</Button>
+                                && <Button type="primary" onClick={this.handelSubmit}>完成</Button>
                             }
                             {
                                 current > 0
