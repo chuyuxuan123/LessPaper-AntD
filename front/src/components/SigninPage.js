@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import { Input, Icon, Row, Col, Button, Radio, Form } from 'antd';
 
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 export default class SigninPage extends Component {
     constructor(props) {
         super(props);
@@ -34,9 +36,9 @@ export default class SigninPage extends Component {
     render() {
         return (
             <div>
-                <Row type="flex" justify="space-around" align="middle" style={{ paddingTop: "200px", }} >
+                <Row type="flex" justify="space-around" align="middle" style={{ paddingTop: "160px", }} >
                     <Col span={7} >
-                        <h1 style={{textAlign:"center"}}><span><Icon type="heart" /></span>LessPaper</h1>
+                        <h1 style={{ textAlign: "center" }}><span><Icon type="heart" /></span>LessPaper</h1>
                         <Input.Group size="large">
                             <Input type="username" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="账号" onChange={this.handelAccount} />
                             <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="密码" onChange={this.handelPassword} />
@@ -50,8 +52,13 @@ export default class SigninPage extends Component {
                     </Radio.Group>
                 </Row>
                 <Row type="flex" justify="space-around" align="middle" style={{ paddingTop: "20px", }} >
-                    <Button type="primary" icon="login" size="large" onClick={this.props.signIn} >登录</Button>
+                    <Col span={5}>
+                        <Button type="primary" icon="login" size="large" onClick={this.props.signIn} block>登录</Button>
+                    </Col>
                 </Row>
+            <Row type="flex" justify="space-around" align="middle" style={{ paddingTop: "50px", }} >
+                <Link to='/signup'>注册新账号</Link>
+            </Row>
             </div>
         )
     }

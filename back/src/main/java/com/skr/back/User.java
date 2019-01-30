@@ -1,4 +1,4 @@
-package com.skr.model;
+package com.skr.back;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,6 +10,9 @@ public class User {
 	private String name;
 
 	private String password;
+
+	//1:teacher 2:student
+	private Integer identity;
 
 	public String getName() {
 		return name;
@@ -25,6 +28,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Integer getIdentity(){
+		return identity;
+	}
+
+	public void setIdentity(Integer i){
+		this.identity = i;
 	}
 
 	public String toString() {

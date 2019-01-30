@@ -38,6 +38,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- spring boot devtools 依赖包 -->
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+		<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -45,6 +51,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                <!-- fork: 如果没有配置该项配置，devtools不会起作用的，即应用不会restear -->
+                <fork>ture</fork>
+               </configuration>
 			</plugin>
 		</plugins>
 	</build>

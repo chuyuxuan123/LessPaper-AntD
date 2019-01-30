@@ -4,7 +4,14 @@
             "type": "java",
             "name": "CodeLens (Launch) - DemoApplication",
             "request": "launch",
-            "mainClass": "com.skr.Main.DemoApplication",
+            "mainClass": "com.skr.back.DemoApplication",
+            "projectName": "back"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "com.skr.DemoApplication",
             "projectName": "back"
         }
     ]

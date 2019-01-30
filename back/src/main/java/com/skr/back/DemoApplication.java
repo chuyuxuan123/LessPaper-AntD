@@ -1,4 +1,4 @@
-package com.skr.main;
+package com.skr.back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,4 +11,3 @@ public class DemoApplication {
 	}
 
 }
-
