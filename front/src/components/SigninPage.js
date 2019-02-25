@@ -46,14 +46,14 @@ export default class SigninPage extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" justify="space-around" align="middle" style={{ paddingTop: "20px", }} >
-                    <Radio.Group>
-                        <Radio value={1} checked={this.state.identity === 1} onChange={this.handelID} >教师</Radio>
-                        <Radio value={2} checked={this.state.identity === 2} onChange={this.handelID} >学生</Radio>
+                    <Radio.Group onChange={this.handelID}>
+                        <Radio value={1} checked={this.state.identity === 1} >教师</Radio>
+                        <Radio value={2} checked={this.state.identity === 2} >学生</Radio>
                     </Radio.Group>
                 </Row>
                 <Row type="flex" justify="space-around" align="middle" style={{ paddingTop: "20px", }} >
                     <Col span={5}>
-                        <Button type="primary" icon="login" size="large" onClick={this.props.signIn} block>登录</Button>
+                        <Button type="primary" icon="login" size="large" onClick={this.props.signIn.bind(this,this.state.identity)} block>登录</Button>
                     </Col>
                 </Row>
             <Row type="flex" justify="space-around" align="middle" style={{ paddingTop: "50px", }} >

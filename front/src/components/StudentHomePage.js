@@ -8,28 +8,28 @@ function callback(key) {
 
 const data = [
     {
-        title: "Qusetion 1",
+        title: "Qusetion 4",
     },
     {
-        title: "Question 2",
+        title: "Question 5",
     },
     {
-        title: "Question 3"
+        title: "Question 6"
     }
 ]
 
-export default class HomePage extends Component {
+export default class StudentHomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            id:this.props.id
         }
     }
     render() {
         return (
             <div>
                 <Tabs onChange={callback}>
-                    <Tabs.TabPane tab="最近" key="1">
+                    <Tabs.TabPane tab="未完成" key="1">
                         <List
                             bordered="true"
                             itemLayout="horizontal"
@@ -41,8 +41,9 @@ export default class HomePage extends Component {
                                         title={<a href="/result">{item.title}</a>}
                                         description="Question Decription"
                                     />
-                                    <Link to="/result">
-                                    <Button type="primary">查看结果</Button>
+                                    {/* TODOS: link指向的谅解url */}
+                                    <Link to="/upload">
+                                    <Button type="primary">上传答案</Button>
                                     </Link>
                                 </List.Item>
                             )}

@@ -47,7 +47,7 @@ class NewQuestionPage extends Component {
         const steps = [
             (
                 <div>
-                    <h1>简单描述题目</h1>
+                    <h1>考试信息</h1>
                     <TextArea id="msg" rows={6} onChange={this.handelMsg} value={this.state.msg} />
                 </div>
             )
@@ -71,21 +71,6 @@ class NewQuestionPage extends Component {
                     </Upload.Dragger>
                 </div>
             )
-            ,
-            (
-                <div>
-                    <h1>传学生答案</h1>
-                    <Upload.Dragger>
-                        <p className="ant-upload-drag-icon">
-                            <Icon type="inbox" />
-                        </p>
-                        <p className="ant-upload-text">单击或拖动文件到此区域进行上传</p>
-                        <p className="ant-upload-hint">支持单个或批量上传。 严格禁止上传公司数据或其他档案文件</p>
-                    </Upload.Dragger>
-                </div>
-            )
-
-
         ]
         const { current } = this.state;
         return (
@@ -93,10 +78,9 @@ class NewQuestionPage extends Component {
                 <Row type="flex" justify="space-around" align="middle" >
                     <Col span={20}>
                         <Steps current={current} style={{ paddingTop: "30px", paddingBottom: "30px" }} >
-                            <Step title="第一步" description="题目信息" />
-                            <Step title="第二步" description="题目具体信息" />
+                            <Step title="第一步" description="考试信息" />
+                            <Step title="第二步" description="添加题目" />
                             <Step title="第三步" description="上传参考答案" />
-                            <Step title="第四步" description="上传学生答案" />
                         </Steps>
                         <div className="steps-content">{steps[current]}</div>
                         <div className="steps-action" style={{paddingTop:"15px"}} >
