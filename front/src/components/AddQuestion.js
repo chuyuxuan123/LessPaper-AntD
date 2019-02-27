@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import {
     Form, Input, Icon, Button,
@@ -6,7 +6,7 @@ import {
 
 let id = 0;
 
-export default class AddQuestion extends Component {
+class AddQuestion extends React.Component {
     remove = (k) => {
         const { form } = this.props;
         // can use data-binding to get
@@ -65,8 +65,9 @@ export default class AddQuestion extends Component {
         const keys = getFieldValue('keys');
         const formItems = keys.map((k, index) => (
             <Form.Item
-                {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
-                label={index === 0 ? 'Passengers' : ''}
+                //   {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
+                {...(formItemLayout)}
+                label={`Qusetion${index+1}`}
                 required={false}
                 key={k}
             >
@@ -75,10 +76,10 @@ export default class AddQuestion extends Component {
                     rules: [{
                         required: true,
                         whitespace: true,
-                        message: "Please input passenger's name or delete this field.",
+                        message: "请输入题目内容",
                     }],
                 })(
-                    <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
+                    <Input placeholder="问题描述" style={{ width: '60%', marginRight: 8 }} />
                 )}
                 {keys.length > 1 ? (
                     <Icon
@@ -95,15 +96,14 @@ export default class AddQuestion extends Component {
                 {formItems}
                 <Form.Item {...formItemLayoutWithOutLabel}>
                     <Button type="dashed" onClick={this.add} style={{ width: '60%' }}>
-                        <Icon type="plus" /> Add field
+                        <Icon type="plus" /> 添加问题
             </Button>
                 </Form.Item>
-                <Form.Item {...formItemLayoutWithOutLabel}>
-                    <Button type="primary" htmlType="submit">Submit</Button>
-                </Form.Item>
+                {/* <Form.Item {...formItemLayoutWithOutLabel}>
+            <Button type="primary" htmlType="submit">Submit</Button>
+          </Form.Item> */}
             </Form>
         );
     }
 }
-
-const WrappedDynamicFieldSet = Form.create({ name: 'dynamic_form_item' })(DynamicFieldSet);
+export default AddQuestion;

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-import { Steps, Button, message, Input, Row, Col, Upload, Icon } from 'antd';
+import { Steps, Button, message, Input, Row, Col, Upload, Icon, Form } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
+import AddQuestion from './AddQuestion';
 
 const Step = Steps.Step;
+const Aq = Form.create({ name: 'dynamic_form_item' })(AddQuestion);
 
 class NewQuestionPage extends Component {
     constructor(props) {
@@ -36,8 +38,10 @@ class NewQuestionPage extends Component {
         })
     }
 
+    //TODOS:上传答案
     handelSubmit = (e) => {
         message.success('上传成功');
+        this.props.history.push("/home");
         // window.location.href = "/home" ;
     }
 
@@ -55,7 +59,7 @@ class NewQuestionPage extends Component {
             (
                 <div>
                     <h1>题目信息</h1>
-                    <TextArea msg="content" rows={6} onChange={this.handelContent} value={this.state.content} />
+                    <Aq />
                 </div>
             )
             ,

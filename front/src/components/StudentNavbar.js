@@ -51,7 +51,7 @@ export default class StudentNavbar extends Component {
                                 </Menu.Item> */}
                                 <Menu.Item key="4">
                                     <Link to="/help">
-                                        <span><Icon type="question-circle" /></span>帮助
+                                    <Icon type="question-circle" /><span>帮助</span>
                                 </Link>
                                 </Menu.Item>
 
