@@ -41,10 +41,10 @@ export default class StudentHomePage extends Component {
                                         title={<a href="/result">{item.title}</a>}
                                         description="Question Decription"
                                     />
-                                    {/* TODOS: link指向的谅解url */}
-                                    <Link to="/upload">
+                                    {/* TODOS: link指向的url */}
+                                    {/* <Link to="/upload">
                                     <Button type="primary">上传答案</Button>
-                                    </Link>
+                                    </Link> */}
                                 </List.Item>
                             )}
                         />

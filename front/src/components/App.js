@@ -15,6 +15,7 @@ import SigninPage from './SigninPage';
 import RegisterPage from './RegisterPage';
 import TeacherNavbar from './TeacherNavbar';
 import StudentNavbar from './StudentNavbar';
+import JudgePage from './JudgePage';
 import '../assets/css/App.css';
 
 import { domainUrl } from '../model/domainUrl';
@@ -72,6 +73,7 @@ class App extends Component {
 
               {this.state.loggedin && <Route path="/newquestion" component={NewQuestionPage} />}
               {this.state.loggedin && <Route path="/result" component={ResultPage} />}
+              {this.state.loggedin && <Route path="/pigai" component={JudgePage} />}
               <Route path="/help" component={AssistPage} />
             </Content>
             <Footer style={{ textAlign: 'center' }}>
